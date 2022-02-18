@@ -1,0 +1,105 @@
+1)List 5 difference between Browser JS(console) v Nodejs
+1.Definition:	
+	Browser JS:JS Engine & Rendering Engine	
+	Nodejs:(JS Runtime Environment) JS Engine(V8) & some C++ libraries
+2.Where to use:
+	Browser JS:FrontEnd	
+		Nodejs:BackEnd
+3.JS Engine:	
+	Browser JS:Based on the browser V8 for Chrome, SpiderMonkey for Firefox, Chakra for IE & Edge, JS Core for Safari	
+	Nodejs:V8 Engine
+4.Global Object:	
+	Browser JS:window	
+	Nodejs:Global
+5.Asynchronous Activity	
+	Browser JS:WebAPIs handle	
+	Nodejs:Libuv Library handle
+6.Asynchronous Activity Thread	
+	Browser JS:ThreadPool  In case of chrome it is managed IO thread	
+	Nodejs:Thread pool of 4-Configured managed by libuv
+7.Module System	
+	Browser JS:ES6 Module System	
+	Nodejs:Common JS
+8.Event Loop	
+	Browser JS:WebAPI and JS run time	
+	Nodejs:Libuv
+
+2)watch & summary 5 points - https://www.youtube.com/watch?v=SmE4OwHztCc&ab_channel=JSConf
+1.HTML Parsing
+HTML uses Conventional parsing because HTML is not contex free grammar
+Parsing-Translating a document into structure that code can use
+Parsing consists a grammar
+Vocabulary-Tags
+Syntax Rule
+ Parsing consists-
+  	Lexical Analysis- Lexer(Toknizer)-Create Tokens
+	Syntax Analysis- Parser -apply syntax rules
+ Webkit uses Flex(lexer) and Bison(parser)
+ If HTML code don’t have closing tag ,it will get add automatically and render it.
+
+DOM(Document Object Model)
+When a web page is loaded, the browser creates a Document Object Model of the page.
+HTML parsing is the process of taking raw HTML code, reading it, and generating a DOM tree object structure from it.
+The HTML DOM model is constructed as a tree of Objects:
+It defines the logical structure of documents and the way a document is accessed and manipulated
+DOM doesn’t specify any relationship between objects.
+Object-HTML Tags (HEAD,BODY,h1,title)
+Model-How you layout all the structure.
+
+2.CSSOM
+ The CSS Object Model is a set of APIs allowing the manipulation of CSS from JavaScript. 
+ It is much like the DOM, but for the CSS rather than the HTML. 
+ It allows users to read and modify CSS style dynamically.
+ CSS uses unconventional parser
+
+3.Render Tree
+Generated while DOM tree is constructed
+Visual elements in order which they are going to be displayed
+ Elements in the render tree are called render or render objects
+Render object is rectangle.
+
+4.Layout
+Calculates position and size
+Most of the time possible to compute geometry in one pass
+Recursive process begins at the root object(<html>)
+Uses Dirty bit system
+
+5.Paint
+Uses Dirty bit system        
+Render tree is being traversed and the paint() method is used to display content on this page
+Painting order:
+1.Background Color
+2.Background Image
+3.Border
+4.Children
+5.Outline
+
+
+4)Execute the below code and write your description in txt file
+
+a.console.log(typeof(1));
+->number
+
+b.console.log(typeof(1.1));
+-->number
+
+c.console.log(typeof('1.1'));
+-->string
+
+d.console.log(typeof(true));
+-->boolean
+
+e.console.log(typeof(null));
+-->object
+
+f.console.log(typeof(undefined));
+-->undefined
+
+g.console.log(typeof([]));
+-->object
+
+h.console.log(typeof({}));
+-->object
+
+i.console.log(typeof(NaN));
+-->number
